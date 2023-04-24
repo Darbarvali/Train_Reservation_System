@@ -34,7 +34,7 @@ Open your browser and navigate to http://localhost:4200
 
 ## Database Structure
 
-yaml
+```yaml
  {
     name: {
       type: String,
@@ -48,6 +48,7 @@ yaml
     }
     
   }
+ ```
  
 [Frontend Url](https://train-reservation-system.netlify.app/)
 
