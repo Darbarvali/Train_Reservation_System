@@ -1,0 +1,45 @@
+<div class="two alt-two">
+  <h1>Train Reservation System
+    <span>Book your Seats Now!</span>
+  </h1>
+</div>
+
+<div class="grid-container">
+  <div class="grid-item">
+  <div class="box">
+      <form  (submit)="onSubmit()">
+  <div class="name">
+         
+        <input type="text" id="name" name="name" placeholder="Your name.." [(ngModel)]="formData.name">
+      </div>
+      <div class="name">
+        <label for="seats">No. of Seats </label>
+        <span >
+        <input type="number" min="1" max="7" id="seats " class="nuseat" name="seats" [(ngModel)]="formData.seats">
+      </span>
+      </div>
+      <input type="submit" value="Submit">
+      </form>
+    </div>
+
+  </div>
+  
+
+ 
+  <div class="grid-item">
+
+
+    <table>
+      <tr *ngFor="let row of numbers">
+        <div class="row">
+          <div class="seat" *ngFor="let num of row">
+            <span *ngIf="available[num-1];else elseBlock" class="notbook">{{ num }}   </span>
+            <ng-template #elseBlock>
+            <span class="book">{{num}}</span>
+            </ng-template>
+          </div>
+        </div>
+      </tr>
+    </table>
+  </div>
+</div>
